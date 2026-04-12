@@ -1619,6 +1619,25 @@ ul {
     color: var(--gray-500);
 }
 
+.footer-bottom-copy {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.footer-credit {
+    color: var(--gray-400);
+}
+
+.footer-credit a {
+    color: var(--gold-light);
+    font-weight: 600;
+}
+
+.footer-credit a:hover {
+    color: var(--gold);
+}
+
 .footer-bottom-links {
     display: flex;
     gap: 20px;
