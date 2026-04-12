@@ -1719,8 +1719,284 @@ ul {
 .animate-on-scroll:nth-child(5) { transition-delay: 0.25s; }
 .animate-on-scroll:nth-child(6) { transition-delay: 0.3s; }
 
+/* ---------- Service Page Template ---------- */
+.service-hero {
+    position: relative;
+    padding: 90px 0 70px;
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 65%, #0d1520 100%);
+    overflow: hidden;
+}
+
+.service-hero::before {
+    content: '';
+    position: absolute;
+    top: -160px;
+    right: -120px;
+    width: 520px;
+    height: 520px;
+    background: radial-gradient(circle, rgba(201,152,46,0.12) 0%, transparent 72%);
+    border-radius: 50%;
+}
+
+.service-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -220px;
+    left: -80px;
+    width: 420px;
+    height: 420px;
+    background: radial-gradient(circle, rgba(201,152,46,0.08) 0%, transparent 74%);
+    border-radius: 50%;
+}
+
+.service-hero-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) 360px;
+    gap: 40px;
+    align-items: center;
+}
+
+.breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 22px;
+    font-size: 13px;
+    color: var(--gray-400);
+}
+
+.breadcrumbs a {
+    color: var(--gray-300);
+}
+
+.breadcrumbs a:hover {
+    color: var(--gold-light);
+}
+
+.breadcrumbs span:last-child {
+    color: var(--gold-light);
+}
+
+.service-hero-points {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 12px;
+}
+
+.service-hero-point {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: var(--radius-md);
+    background: rgba(255,255,255,0.05);
+    color: var(--white);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.service-hero-point i {
+    color: var(--gold);
+    margin-top: 4px;
+}
+
+.service-hero-card {
+    background: rgba(255,255,255,0.97);
+    border-radius: var(--radius-lg);
+    padding: 30px;
+    border: 1px solid rgba(201,152,46,0.22);
+    box-shadow: var(--shadow-xl);
+}
+
+.service-hero-card h2 {
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 800;
+    color: var(--navy);
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.service-hero-card > p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.quick-fact-list {
+    display: grid;
+    gap: 12px;
+    margin: 22px 0;
+}
+
+.quick-fact {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.quick-fact i {
+    color: var(--gold);
+    margin-top: 4px;
+}
+
+.service-note {
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.service-content-section {
+    padding: 90px 0;
+}
+
+.service-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 320px;
+    gap: 40px;
+    align-items: start;
+}
+
+.service-content .section-title {
+    text-align: left;
+    margin-bottom: 24px;
+}
+
+.service-content p {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 18px;
+}
+
+.service-content h3 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 34px 0 14px;
+    line-height: 1.3;
+}
+
+.service-content a {
+    color: var(--gold-dark);
+    font-weight: 700;
+}
+
+.service-content a:hover {
+    color: var(--gold);
+}
+
+.content-list {
+    display: grid;
+    gap: 12px;
+    margin: 18px 0 24px;
+}
+
+.content-list li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+.content-list li::before {
+    content: '\f058';
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--gold);
+}
+
+.service-sidebar {
+    position: sticky;
+    top: 100px;
+    display: grid;
+    gap: 20px;
+}
+
+.service-sidebar-card {
+    background: var(--white);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+}
+
+.service-sidebar-card.alt {
+    background: var(--gold-bg);
+    border-color: rgba(201,152,46,0.25);
+}
+
+.service-sidebar-card h3 {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 16px;
+}
+
+.sidebar-list,
+.sidebar-links {
+    display: grid;
+    gap: 12px;
+}
+
+.sidebar-list li {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+.sidebar-list li i {
+    color: var(--gold);
+    margin-top: 4px;
+}
+
+.sidebar-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+.sidebar-links a:hover {
+    color: var(--gold-dark);
+    gap: 12px;
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1024px) {
+    .service-hero-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .service-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .service-sidebar {
+        position: static;
+    }
+
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1751,6 +2027,22 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .service-hero {
+        padding: 60px 0 50px;
+    }
+
+    .service-hero-points {
+        grid-template-columns: 1fr;
+    }
+
+    .service-hero-card h2 {
+        font-size: 24px;
+    }
+
+    .service-content h3 {
+        font-size: 22px;
+    }
+
     .top-bar {
         display: none;
     }
@@ -1913,6 +2205,14 @@ ul {
 }
 
 @media (max-width: 480px) {
+    .service-hero-card {
+        padding: 24px 20px;
+    }
+
+    .breadcrumbs {
+        font-size: 12px;
+    }
+
     .hero-title {
         font-size: 26px;
     }
