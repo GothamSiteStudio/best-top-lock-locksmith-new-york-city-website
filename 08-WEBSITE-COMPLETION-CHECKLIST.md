@@ -1,7 +1,7 @@
 # Website Completion Checklist
 ## BEST TOP LOCK LOCKSMITH NEW YORK CITY
 ### Goal: #1 Google Ranking for NYC Locksmith Keywords
-### Last Updated: April 11, 2026
+### Last Updated: April 12, 2026
 
 ---
 
@@ -217,8 +217,8 @@ Each page: 500-800 words, unique local content, service list, CTA
 |---|---|---|---|---|
 | 116 | HTTPS / SSL on all pages | ✅ | 🔴 | Live site is already running over HTTPS |
 | 117 | Mobile-first responsive design verified | ✅ | 🔴 | Complete |
-| 118 | XML sitemap generated & submitted | ☐ | 🔴 | Submit to GSC & Bing |
-| 119 | Robots.txt configured properly | ☐ | 🔴 | Allow all, reference sitemap |
+| 118 | XML sitemap generated & submitted | 🔄 | 🔴 | `sitemap.xml` generated; submission to GSC & Bing still pending |
+| 119 | Robots.txt configured properly | ✅ | 🔴 | `robots.txt` added and points to `https://bestlocknyc.com/sitemap.xml` |
 | 120 | Google Search Console verified | ☐ | 🔴 | DNS or HTML verification |
 | 121 | Bing Webmaster Tools verified | ☐ | 🟡 | Import from GSC |
 | 122 | Google Analytics 4 (GA4) installed | ☐ | 🔴 | Via Google Tag Manager |

@@ -38,32 +38,49 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelectorAll('.has-dropdown > .nav-link').forEach(function (link) {
         link.addEventListener('click', function (e) {
             if (window.innerWidth <= 768) {
-                e.preventDefault();
-                this.parentElement.classList.toggle('open');
+                var parentItem = this.parentElement;
+                if (!parentItem.classList.contains('open')) {
+                    e.preventDefault();
+                    document.querySelectorAll('.has-dropdown.open').forEach(function (openItem) {
+                        if (openItem !== parentItem) {
+                            openItem.classList.remove('open');
+                        }
+                    });
+                    parentItem.classList.add('open');
+                }
             }
         });
     });
 
     // ---------- Active Nav on Scroll ----------
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-
-    window.addEventListener('scroll', function () {
-        var current = '';
-        sections.forEach(function (section) {
-            var sectionTop = section.offsetTop - 120;
-            if (window.scrollY >= sectionTop) {
-                current = section.getAttribute('id');
-            }
-        });
-
-        navLinks.forEach(function (link) {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === '#' + current) {
-                link.classList.add('active');
-            }
+    const sectionNavLinks = Array.from(document.querySelectorAll('.nav-link')).filter(function (link) {
+        var href = link.getAttribute('href');
+        return href && href.charAt(0) === '#' && href.length > 1;
+    });
+    const sections = Array.from(document.querySelectorAll('section[id]')).filter(function (section) {
+        return sectionNavLinks.some(function (link) {
+            return link.getAttribute('href') === '#' + section.getAttribute('id');
         });
     });
+
+    if (sectionNavLinks.length > 0 && sections.length > 0) {
+        window.addEventListener('scroll', function () {
+            var current = '';
+            sections.forEach(function (section) {
+                var sectionTop = section.offsetTop - 120;
+                if (window.scrollY >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            sectionNavLinks.forEach(function (link) {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    }
 
     // ---------- Reviews Slider ----------
     var reviewsTrack = document.getElementById('reviewsTrack');
