@@ -60,7 +60,7 @@ Each page needs: 1,000-1,500 words, H1/H2/H3 structure, FAQ schema, internal lin
 |---|---|---|---|---|
 | 23 | Emergency Locksmith NYC | /services/emergency-locksmith-nyc/ | ✅ | emergency locksmith nyc |
 | 24 | Residential Locksmith NYC | /services/residential-locksmith-nyc/ | ✅ | residential locksmith nyc |
-| 25 | Commercial Locksmith NYC | /services/commercial-locksmith-nyc/ | ☐ | commercial locksmith nyc |
+| 25 | Commercial Locksmith NYC | /services/commercial-locksmith-nyc/ | ✅ | commercial locksmith nyc |
 | 26 | Automotive Locksmith NYC | /services/automotive-locksmith-nyc/ | ☐ | car locksmith nyc |
 | 27 | **Top Lock Installation NYC** ★ | /services/top-lock-installation-nyc/ | ☐ | top lock installation nyc |
 | 28 | Lock Change NYC | /services/lock-change-nyc/ | ☐ | lock change nyc |
