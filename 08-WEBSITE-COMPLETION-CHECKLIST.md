@@ -34,7 +34,7 @@
 | 10 | Use deployment-level caching and performance optimization | N/A | 🟡 | No WordPress cache plugin is needed for the current stack |
 | 11 | Build contact / booking form directly in code | ✅ | 🔴 | Homepage form is already built in the site code |
 | 12 | Install Tawk.to live chat widget | ☐ | 🟡 | Free live chat for quick questions |
-| 13 | Optimize images in the asset workflow (not via plugin) | ☐ | 🟡 | Handle compression manually for the static site |
+| 13 | Optimize images in the asset workflow (not via plugin) | ✅ | 🟡 | Sharp-based manual workflow added and the logo asset was compressed |
 | 14 | Set up staging environment for testing | ☐ | 🟢 | Test before going live |
 
 ### 1.3 Homepage (index.html) ✅ BUILT

@@ -1,0 +1,10 @@
+{
+  "name": "best-top-lock-website",
+  "private": true,
+  "scripts": {
+    "optimize-images": "node scripts/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.2"
+  }
+}

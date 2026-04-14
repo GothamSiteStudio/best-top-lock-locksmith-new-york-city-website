@@ -24,18 +24,25 @@ Static marketing website for Best Top Lock Locksmith New York City, focused on e
 - Vanilla JavaScript
 - Google Fonts
 - Font Awesome
+- Sharp for manual image optimization
 
 ## Project Structure
 
 ```text
 .
+|-- scripts/
+|   `-- optimize-images.mjs
 |-- index.html
 |-- css/
 |   `-- style.css
 |-- js/
 |   `-- main.js
+|-- package.json
 |-- images/
-|   `-- logo.png
+|   |-- source/
+|   |   `-- logo.png
+|   |-- logo.png
+|   `-- logo.webp
 `-- 08-WEBSITE-COMPLETION-CHECKLIST.md
 ```
 
@@ -50,6 +57,29 @@ python -m http.server 8080
 ```
 
 Then open `http://localhost:8080`.
+
+## Image Workflow
+
+Install dependencies once:
+
+```bash
+npm install
+```
+
+Put editable source assets inside `images/source/`, then optimize them into production assets:
+
+```bash
+npm run optimize-images
+```
+
+What the script does:
+
+- Resizes oversized raster assets down to a maximum width of 800px
+- Writes optimized production files into `images/` without mutating the source files
+- Creates a WebP copy next to each optimized raster file for site usage
+- Prints a size report so you can verify savings before deployment
+
+This keeps image compression in the repo workflow instead of relying on a CMS plugin.
 
 ## Deployment
 
