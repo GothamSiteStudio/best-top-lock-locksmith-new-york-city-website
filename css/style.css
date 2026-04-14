@@ -66,6 +66,35 @@ body {
     overflow-x: hidden;
 }
 
+.staging-banner {
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #7d1f1f 0%, #c9982e 100%);
+    color: var(--white);
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.staging-banner strong {
+    font-family: var(--font-heading);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.staging-banner span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -88,8 +117,28 @@ ul {
     padding: 0 20px;
 }
 
+body.staging-mode .header.scrolled {
+    top: 0;
+}
+
 .gold-text {
     color: var(--gold);
+}
+
+@media (max-width: 768px) {
+    .staging-banner {
+        gap: 6px;
+        padding: 10px 14px;
+    }
+
+    .staging-banner strong,
+    .staging-banner span {
+        width: 100%;
+    }
+
+    .staging-banner span {
+        font-size: 13px;
+    }
 }
 
 /* ---------- Buttons ---------- */

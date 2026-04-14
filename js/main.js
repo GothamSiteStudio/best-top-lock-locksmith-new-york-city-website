@@ -2,7 +2,152 @@
 // BEST TOP LOCK LOCKSMITH NYC - Main JavaScript
 // ============================================
 
+var currentScript = document.currentScript;
+
+if (!currentScript) {
+    var scriptTags = document.getElementsByTagName('script');
+    currentScript = scriptTags.length > 0 ? scriptTags[scriptTags.length - 1] : null;
+}
+
+var mainScriptSource = currentScript ? (currentScript.getAttribute('src') || currentScript.src || '') : '';
+var siteBasePath = '/';
+
+if (mainScriptSource) {
+    var mainScriptIndex = mainScriptSource.indexOf('js/main.js');
+    if (mainScriptIndex !== -1) {
+        siteBasePath = mainScriptSource.slice(0, mainScriptIndex);
+    }
+}
+
+function loadOptionalSiteConfig(callback) {
+    if (window.BESTLOCK_SITE_CONFIG) {
+        callback(window.BESTLOCK_SITE_CONFIG);
+        return;
+    }
+
+    var existingConfigScript = document.getElementById('site-config-script');
+    if (existingConfigScript) {
+        if (existingConfigScript.getAttribute('data-loaded') === 'true') {
+            callback(window.BESTLOCK_SITE_CONFIG || {});
+            return;
+        }
+
+        existingConfigScript.addEventListener('load', function () {
+            callback(window.BESTLOCK_SITE_CONFIG || {});
+        }, { once: true });
+
+        existingConfigScript.addEventListener('error', function () {
+            callback({});
+        }, { once: true });
+
+        return;
+    }
+
+    var configScript = document.createElement('script');
+    configScript.id = 'site-config-script';
+    configScript.async = true;
+    configScript.src = siteBasePath + 'js/site-config.js';
+
+    configScript.addEventListener('load', function () {
+        configScript.setAttribute('data-loaded', 'true');
+        callback(window.BESTLOCK_SITE_CONFIG || {});
+    });
+
+    configScript.addEventListener('error', function () {
+        callback({});
+    });
+
+    (document.head || document.body).appendChild(configScript);
+}
+
+function trackChatEvent(action) {
+    if (window._paq && typeof window._paq.push === 'function') {
+        window._paq.push(['trackEvent', 'Chat', action, 'Tawk.to']);
+    }
+
+    if (typeof window.gtag === 'function') {
+        window.gtag('event', action, {
+            event_category: 'chat',
+            event_label: 'Tawk.to'
+        });
+    }
+}
+
+function initSiteEnvironment() {
+    loadOptionalSiteConfig(function (siteConfig) {
+        var stagingConfig = siteConfig && siteConfig.staging ? siteConfig.staging : null;
+
+        if (!stagingConfig || !stagingConfig.enabled) {
+            return;
+        }
+
+        if (document.getElementById('staging-banner')) {
+            return;
+        }
+
+        document.documentElement.setAttribute('data-site-environment', 'staging');
+        document.body.classList.add('staging-mode');
+
+        if (document.title.indexOf('[STAGING] ') !== 0) {
+            document.title = '[STAGING] ' + document.title;
+        }
+
+        var banner = document.createElement('div');
+        var bannerLabel = document.createElement('strong');
+        var bannerMessage = document.createElement('span');
+
+        banner.id = 'staging-banner';
+        banner.className = 'staging-banner';
+        bannerLabel.textContent = stagingConfig.label || 'Staging Preview';
+        bannerMessage.textContent = stagingConfig.message || 'For testing only. Search engines should not index this environment.';
+
+        banner.appendChild(bannerLabel);
+        banner.appendChild(bannerMessage);
+        document.body.insertBefore(banner, document.body.firstChild);
+    });
+}
+
+function initTawkChat() {
+    loadOptionalSiteConfig(function (siteConfig) {
+        var tawkConfig = siteConfig && siteConfig.tawk ? siteConfig.tawk : null;
+
+        if (!tawkConfig || !tawkConfig.enabled || !tawkConfig.propertyId || !tawkConfig.widgetId) {
+            return;
+        }
+
+        if (document.getElementById('tawkto-script')) {
+            return;
+        }
+
+        var hasTrackedChatStart = false;
+        window.Tawk_API = window.Tawk_API || {};
+        window.Tawk_LoadStart = new Date();
+        window.Tawk_API.onLoad = function () {
+            trackChatEvent('chat_widget_loaded');
+        };
+        window.Tawk_API.onChatStarted = function () {
+            if (hasTrackedChatStart) {
+                return;
+            }
+
+            hasTrackedChatStart = true;
+            trackChatEvent('chat_started');
+        };
+
+        var tawkScript = document.createElement('script');
+        tawkScript.async = true;
+        tawkScript.src = 'https://embed.tawk.to/' + tawkConfig.propertyId + '/' + tawkConfig.widgetId;
+        tawkScript.charset = 'UTF-8';
+        tawkScript.setAttribute('crossorigin', '*');
+        tawkScript.id = 'tawkto-script';
+
+        (document.head || document.body).appendChild(tawkScript);
+    });
+}
+
 document.addEventListener('DOMContentLoaded', function () {
+
+    initSiteEnvironment();
 
     // ---------- Header Scroll Effect ----------
     const header = document.getElementById('header');
@@ -259,5 +404,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
+
+    initTawkChat();
 
 });

@@ -1,7 +1,7 @@
 # Website Completion Checklist
 ## BEST TOP LOCK LOCKSMITH NEW YORK CITY
 ### Goal: #1 Google Ranking for NYC Locksmith Keywords
-### Last Updated: April 12, 2026
+### Last Updated: April 13, 2026
 
 ---
 
@@ -33,9 +33,9 @@
 | 9 | Manage SEO metadata and schema directly in code | ✅ | 🔴 | Replaces WordPress SEO plugins for this stack |
 | 10 | Use deployment-level caching and performance optimization | N/A | 🟡 | No WordPress cache plugin is needed for the current stack |
 | 11 | Build contact / booking form directly in code | ✅ | 🔴 | Homepage form is already built in the site code |
-| 12 | Install Tawk.to live chat widget | ☐ | 🟡 | Free live chat for quick questions |
+| 12 | Install Tawk.to live chat widget | 🔄 | 🟡 | Global loader added in `js/main.js`; waiting for real Tawk `propertyId` + `widgetId` in `js/site-config.js` |
 | 13 | Optimize images in the asset workflow (not via plugin) | ✅ | 🟡 | Sharp-based manual workflow added and the logo asset was compressed |
-| 14 | Set up staging environment for testing | ☐ | 🟢 | Test before going live |
+| 14 | Set up staging environment for testing | ✅ | 🟢 | Local staging workflow added via `npm run staging`; builds `.staging/` with `noindex`, no `CNAME`, no Matomo, and a visible staging banner |
 
 ### 1.3 Homepage (index.html) ✅ BUILT
 | # | Task | Status | Priority | Notes |

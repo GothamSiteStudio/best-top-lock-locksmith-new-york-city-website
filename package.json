@@ -2,7 +2,10 @@
   "name": "best-top-lock-website",
   "private": true,
   "scripts": {
-    "optimize-images": "node scripts/optimize-images.mjs"
+    "optimize-images": "node scripts/optimize-images.mjs",
+    "build:staging": "node scripts/build-staging.mjs",
+    "serve:staging": "node scripts/serve-staging.mjs",
+    "staging": "node scripts/build-staging.mjs && node scripts/serve-staging.mjs"
   },
   "devDependencies": {
     "sharp": "^0.34.2"
