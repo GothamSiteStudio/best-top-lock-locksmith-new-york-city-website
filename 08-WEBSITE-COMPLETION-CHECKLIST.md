@@ -59,7 +59,7 @@ Each page needs: 1,000-1,500 words, H1/H2/H3 structure, FAQ schema, internal lin
 | # | Page | URL | Status | Target Keyword |
 |---|---|---|---|---|
 | 23 | Emergency Locksmith NYC | /services/emergency-locksmith-nyc/ | ✅ | emergency locksmith nyc |
-| 24 | Residential Locksmith NYC | /services/residential-locksmith-nyc/ | ☐ | residential locksmith nyc |
+| 24 | Residential Locksmith NYC | /services/residential-locksmith-nyc/ | ✅ | residential locksmith nyc |
 | 25 | Commercial Locksmith NYC | /services/commercial-locksmith-nyc/ | ☐ | commercial locksmith nyc |
 | 26 | Automotive Locksmith NYC | /services/automotive-locksmith-nyc/ | ☐ | car locksmith nyc |
 | 27 | **Top Lock Installation NYC** ★ | /services/top-lock-installation-nyc/ | ☐ | top lock installation nyc |
@@ -475,7 +475,7 @@ Each page: 500-800 words, unique local content, service list, CTA
 | Phase | Tasks | Status |
 |---|---|---|
 | Phase 1: Foundation | 22 | 🔄 Partial (domain, hosting, DNS, SSL, email, static site done) |
-| Phase 2: Core Pages | 27 pages | 🔄 Started (Emergency Locksmith NYC built) |
+| Phase 2: Core Pages | 27 pages | 🔄 Started (Emergency + Residential Locksmith NYC built) |
 | Phase 3: Neighborhood Pages | 30 pages | ☐ Not started |
 | Phase 4: Blog Content | 24 articles + requirements | ☐ Not started |
 | Phase 5: Technical SEO | 48 tasks | 🔄 Partial (schema, responsive, HTTPS done) |
