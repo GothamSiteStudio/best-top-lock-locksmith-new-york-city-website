@@ -43,12 +43,20 @@
                     {"@type": "Borough", "name": "Bronx"},
                     {"@type": "Borough", "name": "Staten Island"}
                 ],
-                "openingHoursSpecification": {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-                    "opens": "00:00",
-                    "closes": "23:59"
-                }
+                "openingHoursSpecification": [
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"],
+                        "opens": "06:00",
+                        "closes": "23:00"
+                    },
+                    {
+                        "@type": "OpeningHoursSpecification",
+                        "dayOfWeek": "Friday",
+                        "opens": "06:00",
+                        "closes": "12:00"
+                    }
+                ]
             },
             {
                 "@type": "Service",
@@ -165,7 +173,7 @@
     <div class="top-bar">
         <div class="container top-bar-inner">
             <div class="top-bar-left">
-                <span><i class="fas fa-clock"></i> 24/7 Emergency Service</span>
+                <span><i class="fas fa-clock"></i> Sun-Thu 6am-11pm, Fri 6am-12pm, Sat Closed</span>
                 <span class="top-bar-divider">|</span>
                 <span><i class="fas fa-map-marker-alt"></i> Serving All 5 NYC Boroughs</span>
             </div>
@@ -290,7 +298,7 @@
                     <div class="trust-item"><i class="fas fa-store"></i><span>Storefront &amp; Office Service</span></div>
                     <div class="trust-item"><i class="fas fa-stream"></i><span>Master Key Planning</span></div>
                     <div class="trust-item"><i class="fas fa-file-alt"></i><span>Written Estimates</span></div>
-                    <div class="trust-item"><i class="fas fa-clock"></i><span>24/7 Urgent Support</span></div>
+                    <div class="trust-item"><i class="fas fa-clock"></i><span>Sun-Fri Urgent Support</span></div>
                 </div>
             </div>
         </section>
@@ -717,7 +725,7 @@
                     <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><a href="tel:+19147170708">(914)&nbsp;717&#8209;0708</a></div>
                     <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:Levy@bestlocknyc.com">Levy@bestlocknyc.com</a></div>
                     <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>New York City, NY</span></div>
-                    <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Open 24/7</span></div>
+                    <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Sun-Thu 6am-11pm, Fri 6am-12pm, Sat Closed</span></div>
                 </div>
             </div>
             <div class="footer-bottom">

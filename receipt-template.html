@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Receipt - Best Top Lock Locksmith NYC</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+  @page {
+    size: letter;
+    margin: 0.5in;
+  }
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    color: #1a1a1a;
+    background: #fff;
+    padding: 0.5in;
+    line-height: 1.4;
+  }
+
+  /* Header */
+  .receipt-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #b8960c;
+    padding-bottom: 14px;
+    margin-bottom: 16px;
+  }
+  .company-info h1 {
+    font-size: 22px;
+    color: #1a1a1a;
+    margin-bottom: 2px;
+    letter-spacing: 0.5px;
+  }
+  .company-info .tagline {
+    font-size: 11px;
+    color: #b8960c;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .company-info p {
+    font-size: 12px;
+    color: #444;
+    line-height: 1.5;
+  }
+  .receipt-title-block {
+    text-align: right;
+  }
+  .receipt-title-block h2 {
+    font-size: 28px;
+    color: #b8960c;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 6px;
+  }
+  .receipt-number-line {
+    font-size: 13px;
+    margin-bottom: 3px;
+  }
+  .receipt-number-line span {
+    display: inline-block;
+    border-bottom: 1px solid #999;
+    min-width: 120px;
+    padding-bottom: 1px;
+    margin-left: 4px;
+  }
+
+  /* Info rows */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+  .info-box {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 12px;
+  }
+  .info-box h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #b8960c;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+  }
+  .field-row {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 6px;
+  }
+  .field-row:last-child {
+    margin-bottom: 0;
+  }
+  .field-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    min-width: 80px;
+    flex-shrink: 0;
+  }
+  .field-value {
+    flex: 1;
+    border-bottom: 1px solid #bbb;
+    min-height: 18px;
+    padding-bottom: 1px;
+  }
+
+  /* Services table */
+  .services-section {
+    margin-bottom: 16px;
+  }
+  .services-section h3 {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #b8960c;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .services-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .services-table th {
+    background: #1a1a1a;
+    color: #fff;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 7px 10px;
+    text-align: left;
+  }
+  .services-table th:nth-child(3),
+  .services-table th:nth-child(4) {
+    text-align: right;
+    width: 100px;
+  }
+  .services-table th:nth-child(2) {
+    width: 60px;
+    text-align: center;
+  }
+  .services-table td {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 10px;
+    font-size: 13px;
+    height: 32px;
+  }
+  .services-table td:nth-child(2) {
+    text-align: center;
+  }
+  .services-table td:nth-child(3),
+  .services-table td:nth-child(4) {
+    text-align: right;
+  }
+  .services-table tbody tr:last-child td {
+    border-bottom: 2px solid #999;
+  }
+
+  /* Totals */
+  .totals-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 18px;
+  }
+  .totals-box {
+    width: 280px;
+  }
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    font-size: 13px;
+    border-bottom: 1px solid #eee;
+  }
+  .total-row.grand-total {
+    border-top: 2px solid #1a1a1a;
+    border-bottom: 2px solid #1a1a1a;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 8px 0;
+    margin-top: 4px;
+  }
+  .total-row .total-value {
+    min-width: 90px;
+    text-align: right;
+    border-bottom: 1px solid #bbb;
+  }
+  .total-row.grand-total .total-value {
+    border-bottom: none;
+  }
+
+  /* Payment and notes */
+  .bottom-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 18px;
+  }
+  .payment-box, .notes-box {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px 12px;
+  }
+  .payment-box h3, .notes-box h3 {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #b8960c;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+  }
+  .payment-options {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+  }
+  .payment-option {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+  }
+  .checkbox {
+    width: 14px;
+    height: 14px;
+    border: 1.5px solid #999;
+    border-radius: 2px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+  .notes-lines {
+    min-height: 50px;
+  }
+  .note-line {
+    border-bottom: 1px solid #bbb;
+    height: 20px;
+  }
+
+  /* Signature */
+  .signature-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 18px;
+    margin-top: 10px;
+  }
+  .sig-block {
+    text-align: center;
+  }
+  .sig-line {
+    border-bottom: 1px solid #555;
+    height: 40px;
+    margin-bottom: 4px;
+  }
+  .sig-label {
+    font-size: 11px;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Footer */
+  .receipt-footer {
+    text-align: center;
+    border-top: 2px solid #b8960c;
+    padding-top: 10px;
+    font-size: 11px;
+    color: #777;
+  }
+  .receipt-footer .thank-you {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+  }
+  .receipt-footer p {
+    margin-bottom: 2px;
+  }
+
+  /* Warranty badge */
+  .warranty-strip {
+    background: #f9f6ec;
+    border: 1px dashed #b8960c;
+    border-radius: 4px;
+    padding: 6px 12px;
+    margin-bottom: 14px;
+    text-align: center;
+    font-size: 12px;
+    color: #555;
+  }
+  .warranty-strip strong {
+    color: #1a1a1a;
+  }
+
+  /* Print tweaks */
+  @media print {
+    body {
+      padding: 0;
+    }
+    .no-print {
+      display: none !important;
+    }
+  }
+
+  /* Print button (screen only) */
+  .print-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #b8960c;
+    color: #fff;
+    border: none;
+    padding: 12px 28px;
+    font-size: 15px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  }
+  .print-btn:hover {
+    background: #9a7d0a;
+  }
+</style>
+</head>
+<body>
+
+<button class="print-btn no-print" onclick="window.print()">Print Receipt</button>
+
+<!-- Header -->
+<div class="receipt-header">
+  <div class="company-info">
+    <h1>Best Top Lock Locksmith NYC</h1>
+    <div class="tagline">NYC DCA Licensed &amp; Insured</div>
+    <p>
+      New York City, NY<br>
+      Phone: (914) 717-0708<br>
+      Email: Levy@bestlocknyc.com<br>
+      Web: bestlocknyc.com
+    </p>
+  </div>
+  <div class="receipt-title-block">
+    <h2>Receipt</h2>
+    <div class="receipt-number-line">Receipt #: <span></span></div>
+    <div class="receipt-number-line">Date: <span></span></div>
+    <div class="receipt-number-line">Time: <span></span></div>
+  </div>
+</div>
+
+<!-- Customer and Job Info -->
+<div class="info-grid">
+  <div class="info-box">
+    <h3>Customer Information</h3>
+    <div class="field-row">
+      <div class="field-label">Name:</div>
+      <div class="field-value"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Phone:</div>
+      <div class="field-value"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Email:</div>
+      <div class="field-value"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Address:</div>
+      <div class="field-value"></div>
+    </div>
+  </div>
+  <div class="info-box">
+    <h3>Job Details</h3>
+    <div class="field-row">
+      <div class="field-label">Job Type:</div>
+      <div class="field-value"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Location:</div>
+      <div class="field-value"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Technician:</div>
+      <div class="field-value"></div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Apt / Unit:</div>
+      <div class="field-value"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Services Table -->
+<div class="services-section">
+  <h3>Services &amp; Parts</h3>
+  <table class="services-table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Qty</th>
+        <th>Unit Price</th>
+        <th>Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+      <tr><td></td><td></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Totals -->
+<div class="totals-section">
+  <div class="totals-box">
+    <div class="total-row">
+      <div>Subtotal</div>
+      <div class="total-value">$</div>
+    </div>
+    <div class="total-row">
+      <div>Tax</div>
+      <div class="total-value">$</div>
+    </div>
+    <div class="total-row">
+      <div>Discount</div>
+      <div class="total-value">$</div>
+    </div>
+    <div class="total-row grand-total">
+      <div>TOTAL</div>
+      <div class="total-value">$</div>
+    </div>
+  </div>
+</div>
+
+<!-- Warranty -->
+<div class="warranty-strip">
+  <strong>Warranty:</strong> __________________________________________ &nbsp; | &nbsp; Parts &amp; labor warranty as stated on estimate
+</div>
+
+<!-- Payment + Notes -->
+<div class="bottom-grid">
+  <div class="payment-box">
+    <h3>Payment Method</h3>
+    <div class="payment-options">
+      <div class="payment-option"><span class="checkbox"></span> Cash</div>
+      <div class="payment-option"><span class="checkbox"></span> Credit Card</div>
+      <div class="payment-option"><span class="checkbox"></span> Zelle</div>
+      <div class="payment-option"><span class="checkbox"></span> Check</div>
+      <div class="payment-option"><span class="checkbox"></span> Venmo</div>
+      <div class="payment-option"><span class="checkbox"></span> Other</div>
+    </div>
+    <div class="field-row">
+      <div class="field-label">Ref / Last 4:</div>
+      <div class="field-value"></div>
+    </div>
+  </div>
+  <div class="notes-box">
+    <h3>Notes</h3>
+    <div class="notes-lines">
+      <div class="note-line"></div>
+      <div class="note-line"></div>
+      <div class="note-line"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Signatures -->
+<div class="signature-section">
+  <div class="sig-block">
+    <div class="sig-line"></div>
+    <div class="sig-label">Customer Signature</div>
+  </div>
+  <div class="sig-block">
+    <div class="sig-line"></div>
+    <div class="sig-label">Technician Signature</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="receipt-footer">
+  <div class="thank-you">Thank you for choosing Best Top Lock!</div>
+  <p>(914) 717-0708 &nbsp; | &nbsp; Levy@bestlocknyc.com &nbsp; | &nbsp; bestlocknyc.com</p>
+  <p>Sun-Thu 6am-11pm, Fri 6am-12pm, Sat Closed &nbsp; | &nbsp; All 5 NYC Boroughs &nbsp; | &nbsp; NYC DCA Licensed &amp; Insured</p>
+</div>
+
+</body>
+</html>
