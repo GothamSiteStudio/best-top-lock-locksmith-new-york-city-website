@@ -23,7 +23,7 @@
 | 3 | Install SSL certificate (HTTPS) | ✅ | 🔴 | HTTPS is already active on the live domain |
 | 4 | Set up Cloudflare CDN (free plan) | N/A | 🟡 | Not required for the current static deployment |
 | 5 | Configure DNS records (A, CNAME, MX) | ✅ | 🔴 | Domain is managed in GoDaddy and DNS is live |
-| 6 | Set up professional email (Levy@bestlocknyc.com) | ✅ | 🔴 | Mailbox is live |
+| 6 | Set up professional email (info@bestlocknyc.com) | ✅ | 🔴 | Mailbox is live |
 | 7 | Set up SPF, DKIM, DMARC for email deliverability | ✅ | 🟡 | Email authentication is marked live |
 
 ### 1.2 Website Platform Setup
